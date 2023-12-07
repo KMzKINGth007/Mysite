@@ -322,7 +322,7 @@
             <input id="base" type="text" placeholder="ป้อนความยาวของฐาน">
             <input id="height" type="text" placeholder="ป้อนความสูง">
             <button onclick="calculateHypotenuse(document.getElementById('base').value, document.getElementById('height').value)">คำนวน</button>
-            <h4>ผลลัพธ์:<span id="show"></span></h4>
+            <h4 style="color: white;">ผลลัพธ์:<span id="show"></span></h4>
             
         </div>
     </div>
@@ -401,7 +401,7 @@
             <h2>หาความยาวเส่นรอบวง</h2>
             <input id="input" type="text" placeholder="รัศมี">
             <button onclick="calculateAndDisplayCircumference()">คำนวน</button>
-            <h4>ความยาวเส้นรอบวงกลม:<span id="result4">31.42</span></h4>
+            <h4 style="color: white;">ความยาวเส้นรอบวงกลม:<span id="result4">31.42</span></h4>
         </div>
     </div>
     <script>
@@ -425,10 +425,10 @@
 <hr>
     <div class="row">
         <h2 style="font-weight: bold;">ตรวจสอบเกรด:</h2>
-        <label for="scoreInput">กรอกคะแนน</label>
+        <label for="scoreInput" style="color: white;">กรอกคะแนน</label>
         <input type="text" id="scoreInput" placeholder="กรอกคะแนน">
         <button onclick="calculateGrade()">คำนวณเกรด</button>
-        <p id="result1">เกรดของคุณคือ: A</p>
+        <p id="result1" style="color: white;">เกรดของคุณคือ: A</p>
     </div>
     <script>
         function calculateGrade() {
