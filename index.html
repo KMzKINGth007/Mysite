@@ -479,10 +479,30 @@
                                                     
                                                     <hr>
                                                     <h2 style="color: white;">RandomImage</h2>
-                                                    <div >
-          						<button type="submit" id="fetchButton" class="button button-a button-big button-rouded">Click to random image</button>
-                                                   	<img id="image" width="400" height="300" alt="Random waifu" style="display:none;">
-                                                     </div>
+                                                    <div>
+        <div >
+          <button type="submit" id="fetchButton" class="button button-a button-big button-rouded">Click</button>
+        </div>
+        <img id="image"  style="width: 200px;">
+      </div>
+      <script>
+// https://nekos.best/api/v2/#### ----->see morehttps://docs.nekos.best/api/reference.html
+
+  function fetchRandomImage() {
+    fetch('https://nekos.best/api/v2/waifu')
+      .then(response => response.json())
+      .then(data => {
+        const characterImage = document.getElementById('image');
+        characterImage.src = data.results[0].url;
+      })
+      .catch(error => {
+        console.error('Error fetching random character :', error);
+      });
+  }
+  
+  document.getElementById('fetchButton').addEventListener('click', fetchRandomImage);
+  
+      </script>
                                                     
                                                     <hr>
                                                     
