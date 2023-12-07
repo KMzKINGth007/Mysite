@@ -295,6 +295,27 @@
                                         <div class="tm-flex tm-contact-container tm-bg-dark-blue">                                
                                             <div class="text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact">
                                                 <div class="java-body">
+							<div class="row">
+        <h3 style="font-weight: bold;">A-Z</h3>
+        <button onclick="printAlphabet()">เริ่ม</button>
+        <p id="demo1"></p>
+    </div>
+    <script>
+        function printAlphabet() {
+    let currentCharCode = 'A'.charCodeAt(0);
+  
+    const intervalId = setInterval(() => {
+      document.getElementById("demo1").innerHTML = String.fromCharCode(currentCharCode);
+      //console.log(String.fromCharCode(currentCharCode));
+      currentCharCode++;
+  
+      if (currentCharCode > 'Z'.charCodeAt(0)) {
+        clearInterval(intervalId);
+      }
+    }, 1000);
+  } 
+    </script>
+<hr>
 							    <div class="row">
         <div class="create">
             <h2>หาความยาวเส่นทแยงมุมของสี่เหลี่ยงผืนผ้า</h2>
