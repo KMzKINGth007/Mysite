@@ -297,7 +297,128 @@
                                                 <div class="java-body">
                                                     <h2 class="java-h2">Just change A - Z</h2>
                                                     <p id="demo">Hi</p>
-                                        
+
+							    <div class="row">
+        <div class="create">
+            <h2>หาความยาวเส่นทแยงมุมของสี่เหลี่ยงผืนผ้า</h2>
+            <input id="base" type="text" placeholder="ป้อนความยาวของฐาน">
+            <input id="height" type="text" placeholder="ป้อนความสูง">
+            <button onclick="calculateHypotenuse(document.getElementById('base').value, document.getElementById('height').value)">คำนวน</button>
+            <h4>ผลลัพธ์:<span id="show"></span></h4>
+            
+        </div>
+    </div>
+    <script>
+        function calculateHypotenuse(base, height) {
+            let result = Math.sqrt(base ** 2 + height ** 2);
+            document.getElementById('show').innerHTML = result.toFixed(3);
+        }
+    </script>
+
+    <div class="row">
+        <div class="zone">
+            <h2>Sort Numbers</h2>
+            <input type="number" id="num1" placeholder="Enter the numbers at 1">
+            <input type="number" id="num2" placeholder="Enter the numbers at 2">
+            <input type="number" id="num3" placeholder="Enter the numbers at 3">
+            <button type="button" onclick="sortNumbers()">Sort</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function calculatePoints() {
+            const moneyInput = document.getElementById("demo1");
+            const moneyValue = parseInt(moneyInput.value);
+
+            if (!isNaN(moneyValue) && moneyValue > 0) {
+                const points = Math.floor(moneyValue / 100);
+                document.getElementById("demo3").innerHTML = `Your points: ${points}`;
+            } else {
+                alert("Please enter a valid amount greater than 0.");
+            }
+        }
+
+        function sortNumbers() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const num3 = parseFloat(document.getElementById("num3").value);
+
+            const numbers = [num1, num2, num3];
+
+            numbers.sort((a, b) => b - a);
+
+            document.getElementById("result").innerHTML = numbers;
+        }
+
+        function checkAge() {
+            const age = document.getElementById("age").value;
+            if (!isNaN(age) && age >= 0) {
+                const message = age >= 18 ? 'Allowed' : 'Not allowed';
+                document.getElementById("message").innerHTML = message;
+            } else {
+                document.getElementById("message").innerHTML = 'Invalid age';
+            }
+        }
+
+        function daysToSeconds() {
+            const days = parseInt(document.getElementById("days").value);
+            const secondsPerMinute = 60;
+            const minutesPerHour = 60;
+            const hoursPerDay = 24;
+            const seconds = days * hoursPerDay * minutesPerHour * secondsPerMinute;
+            document.getElementById("seconds").innerHTML = seconds;
+        }
+
+        function convert() {
+            const fahrenheit = document.getElementById("fahrenheit").value;
+            const celsius = (fahrenheit - 32) / 1.8;
+            document.getElementById("celsius").innerHTML = celsius;
+        }
+
+
+    </script>
+
+    <div class="row">
+        <div class="create">
+            <h2>หาความยาวเส่นรอบวง</h2>
+            <input id="input" type="text" placeholder="รัศมี">
+            <button onclick="calculateAndDisplayCircumference()">คำนวน</button>
+            <h4>ความยาวเส้นรอบวงกลม:<span id="result4">31.42</span></h4>
+        </div>
+    </div>
+    <script>
+        function calculateCircleCircumference(radius) {
+            return 2 * Math.PI * radius;
+        }
+        function calculateAndDisplayCircumference() {
+            let inputElement = document.getElementById('input');
+            let resultElement = document.getElementById('result4');
+
+            let radius = parseFloat(inputElement.value);
+
+            if (!isNaN(radius)) {
+                let circumference = calculateCircleCircumference(radius);
+                resultElement.textContent = circumference.toFixed(2);
+            } else {
+                resultElement.textContent = 'กรุณากรอกค่าที่ถูกต้อง';
+            }
+        }
+    </script>
+
+    <div class="row">
+        <h2 style="font-weight: bold;">ตรวจสอบเกรด:</h2>
+        <label for="scoreInput">กรอกคะแนน</label>
+        <input type="text" id="scoreInput" placeholder="กรอกคะแนน">
+        <button onclick="calculateGrade()">คำนวณเกรด</button>
+        <p id="result1">เกรดของคุณคือ: A</p>
+    </div>
+    <script>
+        function calculateGrade() {
+            var score = parseFloat(document.getElementById("scoreInput").value);
+            var grade = (score >= 80) ? "A" : (score >= 70) ? "B" : (score >= 60) ? "C" : (score >= 50) ? "D" : "F";
+            document.getElementById("result1").innerHTML = "เกรดของคุณคือ: " + grade;
+        }
+    </script>
 						</div style="color: white;">
                                                 <canvas id="myChart1" style="width:100%;max-width:600px;height: 500px;"></canvas>
                                                 <canvas id="myChart2" style="width:100%;max-width:600px;height: 500px;"></canvas>
