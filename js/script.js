@@ -179,3 +179,17 @@ function displayLastUpdateTime(currentTime) {
 fetchPrices();
 
 setInterval(fetchPrices, 3000);
+//------------------------imgrandom
+  function fetchRandomImage() {
+    fetch('https://nekos.best/api/v2/waifu')
+      .then(response => response.json())
+      .then(data => {
+        const characterImage = document.getElementById('image');
+        characterImage.src = data.results[0].url;
+      })
+      .catch(error => {
+        console.error('Error fetching random character :', error);
+      });
+  }
+  
+  document.getElementById('fetchButton').addEventListener('click', fetchRandomImage);
