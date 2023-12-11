@@ -106,23 +106,7 @@ function fetchRandomDog() {
 
 
 
-function fetchNationality() {
-  var name = document.getElementById('name').value;
-  if (name.trim() === "") {
-      alert("Please enter a name");
-      return;
-  }
 
-  fetch(`https://api.nationalize.io?name=${name}`)
-      .then(response => response.json())
-      .then(data => {
-          displayResult(data);
-      })
-      .catch(error => {
-          console.error('Error fetching data:', error);
-          alert('Error fetching data. Please try again.');
-      });
-}
 
 function displayResult(data) {
   var resultDiv = document.getElementById('result');
